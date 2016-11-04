@@ -1,5 +1,9 @@
 package president;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+
 public class President {
 	private String name;
 	private String term;
@@ -50,4 +54,35 @@ public class President {
 		this.imgURL = imgURL;
 	}
 	
+	public static ArrayList<President> getPresidents(){
+		ArrayList<President> presidents = new ArrayList<>();
+		try(BufferedReader bufIn = new BufferedReader(new FileReader("presidents.txt"))){
+			String line;
+			while ((line=bufIn.readLine()) != null){
+				String[] values = line.split(",");
+				presidents.add(new President(values[1], 
+						values[3].substring(values[3].length()-4) + "-" + values[4].substring(values[4].length()-4),
+						values[5].trim(), "",""
+						));
+						
+			}
+		} catch (Exception e) {
+			System.out.println("Could not load presidents");
+		}
+		return presidents;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "President [name=" + name + ", term=" + term + ", party=" + party + ", fact=" + fact + ", imgURL="
+				+ imgURL + "]";
+	}
+
+	public static void main(String[] args) {
+		ArrayList<President> ps = getPresidents();
+		for (President p : ps){
+			System.out.println(p);
+		}
+	}
 }
