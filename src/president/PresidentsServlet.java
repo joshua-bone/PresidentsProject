@@ -33,6 +33,7 @@ public class PresidentsServlet extends HttpServlet {
 		// if initial page load
 		if (dao == null) {
 			dao = new PresDAO(req.getServletContext());
+			dao.readFactFile();
 			dao.readFile(); // debug: move to dao constructor
 			dao.setIndex(0); // debug: move to dao constructor
 			session.setAttribute("dao", dao);
