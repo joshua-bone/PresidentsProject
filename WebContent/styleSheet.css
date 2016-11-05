@@ -1,3 +1,19 @@
-h2{
-	color:pink;
+body {
+    background-color: black;
+
+
+
+    color: black;
+    text-align: center;
+    
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	
+	
+
+background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYX8WfUBOcKlB52EqjSXAioSBt8E0MBUp6plDK4l4IV98WOHUNdAPsMRQ");}
 }
