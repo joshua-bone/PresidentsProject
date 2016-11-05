@@ -4,7 +4,7 @@ public interface PresidentDAO {
 
 	public void readFile();
 
-	public void getName();
+	public String getName();
 
 	public void getTerm();
 
@@ -14,7 +14,7 @@ public interface PresidentDAO {
 
 	public void mgURL();
 
-	public void incremenetIndex();
+	public void incrementIndex();
 
 	public void decrementIndex();
 
