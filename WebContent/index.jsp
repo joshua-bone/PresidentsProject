@@ -9,6 +9,9 @@
 </head>
 <body>
 <h2> ${dao.name}</h2>
+<h2> ${dao.party}</h2>
+<h2> ${dao.term}</h2>
+<h2> ${dao.fact}</h2>
 <form action="presidents.do" method="POST">
 	<button name="navigate" value="back">Back</button>
 	<img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg" width="100"/>
