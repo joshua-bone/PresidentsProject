@@ -31,7 +31,7 @@ public class PresDAO implements PresidentDAO {
 						.add(new President(values[1],
 								values[3].substring(values[3].length() - 4) + "-"
 										+ values[4].substring(values[4].length() - 4),
-								values[5].trim(), fact.get(counter++),
+								values[5].trim(), "",
 								"https://www.whitehouse.gov/sites/default/files/imagecache/gallery_img_full/image/image_file/"
 										+ values[6].trim()));
 			}
@@ -44,22 +44,7 @@ public class PresDAO implements PresidentDAO {
 
 	}
 
-	@Override
-	public void readFactFile() {
-		InputStream is = servletContext.getResourceAsStream("WEB-INF/PresidentFacts.txt");
-		try (BufferedReader buf = new BufferedReader(new InputStreamReader(is))) {
-			String line;
-			int counter = 0;
-			if (counter<45){
-			while ((line = buf.readLine()) != null) {
-				fact.set(counter, line);
-				counter++;
-			}
-			}
-	}catch(Exception e){
-			System.out.println("Could not load presidents");
-	}
-	}
+	
 
 	public String getName() {
 		return presidents.get(index).getName();
