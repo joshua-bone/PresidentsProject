@@ -7,6 +7,7 @@ public interface PresidentDAO {
 	public String getTerm();
 	public String getFact();
 	public String getImgURL();
+	public void readFactFile();
 	public void incrementIndex();
 	public void decrementIndex();
 	public void setIndex(int i);
