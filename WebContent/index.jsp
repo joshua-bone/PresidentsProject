@@ -14,10 +14,9 @@
 <h2> ${dao.term}</h2>
 <h2> ${dao.fact}</h2>
 <form action="presidents.do" method="POST">
+	<img src="${dao.imgURL}" width="300"/><br>
 	<button name="navigate" value="back">Back</button>
-	<img src="${dao.imgURL}" width="300"/>
 	<button name="navigate" value="forward">Forward</button>
-	<br>
 	<input type="number" name="term"/>
 	<button name="navigate" value="getTerm">Get Term</button>
 </form>
