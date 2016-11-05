@@ -1,9 +1,8 @@
 body {
-    background-color: black;
 
 
-
-    color: black;
+ 
+    color: blanchedalmond;
     text-align: center;
     
     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
@@ -15,5 +14,52 @@ body {
 	
 	
 
-background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYX8WfUBOcKlB52EqjSXAioSBt8E0MBUp6plDK4l4IV98WOHUNdAPsMRQ");
 }
+
+ html{
+ background: url("http://wallpapercave.com/wp/QaiiKRp.jpg") no-repeat center center fixed; 
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ }
+ 
+ img{
+ border-radius: 50%;
+
+
+ }
+ 
+  p{
+ width:300px;
+border:20px; 
+ margin-left: 70%; 
+ } 
+ 
+ .presidentImage{
+ width:48%;
+ 
+ float:left;
+ }
+ 
+ 
+ }
+ .form{
+ float: clear;
+ }
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
