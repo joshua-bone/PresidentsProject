@@ -16,16 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/Presidents")
+@WebServlet("/presidents.do")
 public class PresidentsServlet extends HttpServlet {
-
-	@Override
-	public void init() throws ServletException {
-		ArrayList<President> presidents = President.getPresidents();
-		ServletContext context = getServletContext();
-		context.setAttribute("presidents", presidents);
-
-	}
 
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,32 +27,39 @@ public class PresidentsServlet extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
-		
+
 		PresidentDAO dao = (PresidentDAO) session.getAttribute("dao");
-		if (dao == null){
-			dao = new PresDAO();
-			dao.readFile(); //debug: move to dao constructor
-			dao.setIndex(1); //debut: move to dao constructor
+
+		// if initial page load
+		if (dao == null) {
+			dao = new PresDAO(req.getServletContext());
+			dao.readFile(); // debug: move to dao constructor
+			dao.setIndex(0); // debug: move to dao constructor
 			session.setAttribute("dao", dao);
 		}
-		
+
 		String direction = req.getParameter("navigate");
-		switch (direction) {
-		case "forward":
-			dao.incremenetIndex();;
-			break;
-		case "back":
-			dao.decrementIndex();
-			break;
-		case "getTerm":
-			int i = 1;
-			try{ 
-				i = Integer.parseInt(req.getParameter("term"));
-			} catch (NumberFormatException nfe){}
-			dao.setIndex(i);
+		// if button press
+		if (direction != null) {
+			switch (direction) {
+			case "forward":
+				dao.incrementIndex();
+				break;
+			case "back":
+				dao.decrementIndex();
+				break;
+			case "getTerm":
+				int i = 1;
+				try {
+					i = Integer.parseInt(req.getParameter("term"));
+				} catch (NumberFormatException nfe) {
+				}
+				dao.setIndex(i - 1);
+				break;
+			}
 		}
-		
-		RequestDispatcher dispatcher = context.getRequestDispatcher("/index.jsp");
-		dispatcher.forward(req,  resp);
+
+		RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/index.jsp");
+		dispatcher.forward(req, resp);
 	}
 }

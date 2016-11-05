@@ -64,10 +64,4 @@ public class President {
 				+ imgURL + "]";
 	}
 
-	public static void main(String[] args) {
-		ArrayList<President> ps = getPresidents();
-		for (President p : ps){
-			System.out.println(p);
-		}
-	}
 }

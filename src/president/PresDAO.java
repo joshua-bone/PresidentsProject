@@ -1,4 +1,4 @@
-package president;
+	package president;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -13,13 +13,14 @@ public class PresDAO implements PresidentDAO{
 	private ServletContext servletContext;
 	private ArrayList<President> presidents = new ArrayList<>();
 	private int index; 
+	
 	public PresDAO(ServletContext context){
 	this.servletContext = context;
-	
 	}
+	
 	@Override
 	public void readFile() {
-		InputStream is = servletContext.getResourceAsStream("presidents.txt");
+		InputStream is = servletContext.getResourceAsStream("WEB-INF/presidents.txt");
 		try (BufferedReader buf = new BufferedReader(new InputStreamReader(is))) {
 			String line;
 			while ((line=buf.readLine()) != null){
@@ -35,24 +36,30 @@ public class PresDAO implements PresidentDAO{
 	
 	}
 		
-	
-
-	@Override
 	public String getName() {
-		String name = presidents.get(index) .getName();
-		return name;
+		return presidents.get(index).getName();
+	}
+	public String getParty(){
+		return presidents.get(index).getParty();
+	}
+	public String getTerm(){
+		return presidents.get(index).getTerm();
+	}
+	public String getFact(){		
+		return presidents.get(index).getFact();
+	}
+	public String getImgURL(){		
+		return presidents.get(index).getImgURL();
 	}
 
 	@Override
 	public void incrementIndex() {
-		index++; 
-		
+		if (index < presidents.size() - 1 ) index++; 
 	}
 
 	@Override
 	public void decrementIndex() {
-		index--; 
-		
+		if (index > 0) index--; 
 	}
 
 	@Override
