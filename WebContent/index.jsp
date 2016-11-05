@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel= "stylesheet" href="styleSheet.css"></>
 
 <title>Presidents</title>
 </head>
@@ -14,7 +15,7 @@
 <h2> ${dao.fact}</h2>
 <form action="presidents.do" method="POST">
 	<button name="navigate" value="back">Back</button>
-	<img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg" width="100"/>
+	<img src="${dao.imgURL}" width="300"/>
 	<button name="navigate" value="forward">Forward</button>
 	<br>
 	<input type="number" name="term"/>

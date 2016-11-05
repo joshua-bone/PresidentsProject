@@ -27,14 +27,14 @@ public class PresDAO implements PresidentDAO{
 				String[] values = line.split(",");
 				presidents.add(new President(values[1], 
 						values[3].substring(values[3].length()-4) + "-" + values[4].substring(values[4].length()-4),
-						values[5].trim(), "https://www.whitehouse.gov/sites/default/files/imagecache/gallery_img_full/image/image_file/" + values[6].trim(),""
+						values[5].trim(), "", "https://www.whitehouse.gov/sites/default/files/imagecache/gallery_img_full/image/image_file/" + values[6].trim()
 						));		
 			}
 		} catch (Exception e) {
 			System.out.println("Could not load presidents");
 		}
 		//special case since Obama doesn't have a painted portrait yet
-		presidents.get(presidents.size()-1).setImgURL("https://commons.wikimedia.org/wiki/File:Official_portrait_of_Barack_Obama.jpg");
+		presidents.get(presidents.size()-1).setImgURL("https://upload.wikimedia.org/wikipedia/commons/e/e9/Official_portrait_of_Barack_Obama.jpg");
 	
 	}
 		
@@ -66,7 +66,9 @@ public class PresDAO implements PresidentDAO{
 
 	@Override
 	public void setIndex(int i) {
-		this.index=i; 
+		if (i >= 0 && i < presidents.size()){
+			this.index=i;
+		}
 		
 	}
 
