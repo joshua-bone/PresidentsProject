@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>Presidents</title>
 </head>
 <body>
-<form action="calculate.do" method="POST">
+<form action="/Presidents" method="POST">
 	<button name="navigate" value="back">Back</button>
 	<img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg" width="100"/>
 	<button name="navigate" value="forward">Forward</button>
