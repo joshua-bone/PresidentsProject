@@ -31,9 +31,12 @@ body {
  }
  
   p{
- width:300px;
+color: Silver;
+text-align:left;
+width:300px;
 border:20px; 
  margin-left: 70%; 
+
  } 
  
  .presidentImage{

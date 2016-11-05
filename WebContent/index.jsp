@@ -13,9 +13,9 @@
 <h2> ${dao.party}</h2>
 <h2> ${dao.term}</h2>
 
-	<div class="presidentImage"><img src="${dao.imgURL}" width="300"/></div>
+	<div class="presidentImage"><img src="${dao.imgURL}" width="400"/></div>
 	<div class="presidentFact"><p> ${dao.fact}</p></div>
-
+<br/><br/><br/>
 
 <form action="presidents.do" method="POST">
 	<button name="navigate" value="back">Back</button>
