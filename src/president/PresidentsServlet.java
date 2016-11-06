@@ -39,7 +39,7 @@ public class PresidentsServlet extends HttpServlet {
 			session.setAttribute("dao", dao);
 		}
 
-		String direction = req.getParameter("navigate");
+		String direction = req.getParameter("navigate");  //this is how a servlet gets info from a jsp
 		// if button press
 		if (direction != null) {
 			switch (direction) {

@@ -7,18 +7,21 @@ import java.util.ArrayList;
 public class President {
 	private String name;
 	private String term;
+	private int nthTerm; 
 	private String party;
 	private String fact;
 	private String imgURL;
 	
 	
-	public President(String name, String term, String party, String fact, String imgURL) {
+	
+	public President(String name, String term, String party, String fact, String imgURL, int nthTerm) {
 		super();
 		this.name = name;
 		this.term = term;
 		this.party = party;
 		this.fact = fact;
 		this.imgURL = imgURL;
+		this.nthTerm=nthTerm; 
 	}
 	
 	public President(){}
@@ -52,6 +55,10 @@ public class President {
 	}
 	public void setImgURL(String imgURL) {
 		this.imgURL = imgURL;
+	}
+	
+	public int getNthTerm() {
+		return nthTerm;
 	}
 	
 	

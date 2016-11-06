@@ -9,6 +9,7 @@
 <title>Presidents</title>
 </head>
 <body>
+<h3>${dao.nthTerm}</h3>
 <h2> ${dao.name}</h2>
 <h2> ${dao.party}</h2>
 <h2> ${dao.term}</h2>
@@ -18,7 +19,7 @@
 <br/><br/><br/>
 
 <form action="presidents.do" method="POST">
-	<button name="navigate" value="back">Back</button>
+	<button  name="navigate" value="back">Back</button>
 	<button name="navigate" value="forward">Forward</button>
 	<input type="number" name="term"/>
 	<button name="navigate" value="getTerm">Get Term</button>

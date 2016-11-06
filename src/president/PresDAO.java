@@ -31,9 +31,9 @@ public class PresDAO implements PresidentDAO {
 						.add(new President(values[1],
 								values[3].substring(values[3].length() - 4) + "-"
 										+ values[4].substring(values[4].length() - 4),
-								values[5].trim(), fact.get(counter++),
+								values[5].trim(), fact.get(counter),
 								"https://www.whitehouse.gov/sites/default/files/imagecache/gallery_img_full/image/image_file/"
-										+ values[6].trim()));
+										+ values[6].trim(),(counter++)+1));
 			}
 		} catch (Exception e) {
 			System.out.println("Could not load presidents");
@@ -50,7 +50,6 @@ public class PresDAO implements PresidentDAO {
 		try (BufferedReader buf = new BufferedReader(new InputStreamReader(is))) {
 			
 			String line;
-			int counter = 0;
 			while ((line = buf.readLine()) != null) {
 				fact.add(line); 
 			}
@@ -98,8 +97,16 @@ public class PresDAO implements PresidentDAO {
 	public void setIndex(int i) {
 		if (i >= 0 && i < presidents.size()) {
 			this.index = i;
-		}
+		}	
+			
+		
 
+	}
+
+	
+	@Override
+	public int getNthTerm() {
+		return presidents.get(index).getNthTerm();
 	}
 
 }

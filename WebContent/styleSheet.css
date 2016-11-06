@@ -39,6 +39,12 @@ border:20px;
 
  } 
  
+ h3{
+ 
+color:silver;
+float: left; 
+ }
+ 
  .presidentImage{
  width:48%;
  
@@ -48,6 +54,7 @@ border:20px;
  
  }
  .form{
+ position: absolute; 
  float: clear;
  }
 
