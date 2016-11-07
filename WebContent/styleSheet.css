@@ -49,15 +49,16 @@ float: left;
  width:48%;
  
  float:left;
+
  }
  
  
- }
- .form{
- position: absolute; 
- float: clear;
  }
 
+form{
+	
+margin-bottom: 10%
+}
  
  
  
