@@ -11,5 +11,6 @@ public interface PresidentDAO {
 	public void incrementIndex();
 	public void decrementIndex();
 	public void setIndex(int i);
+	public boolean implementFilter(String n);
 	public int getNthTerm();
 }

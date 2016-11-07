@@ -33,13 +33,12 @@ public class PresidentsServlet extends HttpServlet {
 		// if initial page load
 		if (dao == null) {
 			dao = new PresDAO(req.getServletContext());
-			dao.readFactFile();
-			dao.readFile(); // debug: move to dao constructor
-			dao.setIndex(0); // debug: move to dao constructor
 			session.setAttribute("dao", dao);
 		}
 
-		String direction = req.getParameter("navigate");  //this is how a servlet gets info from a jsp
+		String direction = req.getParameter("navigate"); // this is how a
+															// servlet gets info
+															// from a jsp
 		// if button press
 		if (direction != null) {
 			switch (direction) {
@@ -57,10 +56,19 @@ public class PresidentsServlet extends HttpServlet {
 				}
 				dao.setIndex(i - 1);
 				break;
+			case "filterText":
+				String filter = req.getParameter("filter");
+				if(dao.implementFilter(filter)){
+					session.setAttribute("filter", filter);
+				} else {
+					session.setAttribute("filter", null);
+				}
+				break;
 			}
 		}
 
 		RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/index.jsp");
 		dispatcher.forward(req, resp);
+
 	}
 }
