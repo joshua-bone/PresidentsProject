@@ -13,11 +13,11 @@
 <h2> ${dao.name}</h2>
 <h2> ${dao.party}</h2>
 <h2> ${dao.term}</h2>
-
+<div>
 	<div class="presidentImage"><img src="${dao.imgURL}" width="400"/></div>
 	<div class="presidentFact"><p> ${dao.fact}</p></div>
 <br/><br/><br/>
-
+</div>
 <form action="presidents.do" method="POST">
 	<button  name="navigate" value="back">Back</button>
 	<button name="navigate" value="forward">Forward</button>
