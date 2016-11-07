@@ -66,6 +66,11 @@ public class PresidentsServlet extends HttpServlet {
 				break;
 			}
 		}
+		
+		String thumbnail = req.getParameter("thumbnail");
+		if (thumbnail != null){
+			dao.setIndex(Integer.parseInt(thumbnail));
+		}
 
 		RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/index.jsp");
 		dispatcher.forward(req, resp);

@@ -87,6 +87,16 @@ public class PresDAO implements PresidentDAO {
 		}
 		return matches;
 	}
+	
+	public ArrayList<String> getImgs(){
+		ArrayList<String> imgs= new ArrayList<>(); 
+		for (President p : filterList) {
+			imgs.add(p.getImgURL());
+		}
+		
+		return imgs; 
+		
+	}
 
 	public String getName() {
 		return filterList.get(index).getName();
@@ -106,6 +116,10 @@ public class PresDAO implements PresidentDAO {
 
 	public String getImgURL() {
 		return filterList.get(index).getImgURL();
+	}
+	
+	public ArrayList<President> getPresidents(){
+		return this.filterList;
 	}
 
 	@Override

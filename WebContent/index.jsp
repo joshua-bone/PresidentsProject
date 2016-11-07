@@ -38,6 +38,14 @@
 		</form>
 	</div>
 	
+	<form action="presidents.do" method="POST">
+	<c:set var="count" value="0" scope="page"/>
+	<c:forEach var="p" items="${dao.presidents}" varStatus="counter">
+<button class="fancyButton" name="thumbnail" value="${count}"><img src="${p.imgURL}" width="100" style="background-color: black"></button>
+<c:set var="count" value="${count + 1 }" scope="page"/>
+</c:forEach>
+</form>
+	
 	<br />
 	<br />
 	<br /> 
