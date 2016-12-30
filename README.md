@@ -8,3 +8,8 @@ Spring MVC
 Java Server Pages (JSPs)  
 JSP Standard Tag Library (JSTL)  
 HTML/CSS  
+
+## Dev Team
+Joshua Bone  
+Brian Ipock  
+Chris Buttaro  
