@@ -10,8 +10,8 @@ Spring MVC
 Java Server Pages (JSPs)  
 JSP Standard Tag Library (JSTL)  
 HTML/CSS  
-XML
-Maven
+XML  
+Maven  
 Git
 
 ## Dev Team
